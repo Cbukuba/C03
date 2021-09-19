@@ -21,10 +21,11 @@ char	*ft_strstr(char *str, char *to_find)
 	while (str[i] != '\0')
 	{	
 		j = 0;
-		if (str[i + j] == to_find[j])
+		while (str[i + j] == to_find[j])
 		{
+			if (to_find[j + 1] == '\0')
+				return (str + i);
 			j ++;
-			return (to_find);
 		}
 		i ++;
 	}
@@ -33,7 +34,6 @@ char	*ft_strstr(char *str, char *to_find)
 
 /*#include <string.h>
 #include <stdio.h>
-
 int main()
 {
 	char s1[] = "Youtube Wassup";
