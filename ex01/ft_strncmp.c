@@ -10,52 +10,35 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// int	ft_strncmp(char *s1, char *s2, unsigned int n)
-// {
-// 	int				i;
-// 	unsigned int	cmp;
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
+{
+	unsigned int	i;
 
-// 	i = 0;
-// 	cmp = 1;
-// 	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && cmp < n)
-// 	{
-// 		i ++;
-// 		cmp ++;
-// 	}
-// 	return (s1[i] - s2[i]);
-// }
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && i < n - 1)
+		i ++;
+	return (s1[i] - s2[i]);
+}
+
 // #include <string.h>
 // #include <stdio.h>
-// int main()
+// int main(void)
 // {
-//     char s1[] = "aaei";
-//     char s2[] = "abed";
-//     printf("%d\n", strncmp(s1, s2, 6));
-// 	printf("%d", ft_strncmp(s1, s2, 6));
+//     printf("1: ft_strncmp:  %d\n", ft_strncmp("aaa", "aaa", 20));
+//     printf("      strncmp:  %d\n", strncmp("aaa", "aaa", 20));
+//     printf("2: ft_strncmp:  %d\n", ft_strncmp("aaa", "aaA", 20));
+//     printf("      strncmp:  %d\n", strncmp("aaa", "aaA", 20));
+//     printf("3: ft_strncmp: %d\n", ft_strncmp("aaaaaaaa", "aab", 20));
+//     printf("      strncmp: %d\n", strncmp("aaaaaaaa", "aab", 20));
+//     printf("4: ft_strncmp: %d\n", ft_strncmp("aaa", "aaabcd", 3));
+//     printf("      strncmp: %d\n", strncmp("aaa", "aaabcd", 3));
+//     printf("5: ft_strncmp: %d\n", ft_strncmp("aa0", "aab", 20));
+//     printf("      strncmp: %d\n", strncmp("aa0", "aab", 20));
+//     printf("6: ft_strncmp: %d\n", ft_strncmp("aa", "aab", 0));
+//     printf("      strncmp: %d\n", strncmp("aa", "aab", 0));
+//     printf("7: ft_strncmp: %d\n", ft_strncmp("", "aab", 20));
+//     printf("      strncmp: %d\n", strncmp("", "aab", 20));
+//     printf("8: ft_strncmp:  %d\n", ft_strncmp("", "",-1));
+//     printf("      strncmp:  %d\n", strncmp("", "", -1));
+//     return (0);
 // }
-
-int    ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-    int                i;
-    unsigned int    cmp;
-
-    i = 0;
-    cmp = 0;
-    while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && cmp < n)
-    {
-        i ++;
-        cmp ++;
-    }
-    if (s2[i] > s1[i])
-      return (-(n - cmp));
-    return (n - cmp);
-}
-#include <string.h>
-#include <stdio.h>
-int main()
-{
-    char s1[] = "abei";
-    char s2[] = "abed";
-    printf("%d\n", strncmp(s1, s2, 4));
-    printf("%d", ft_strncmp(s1, s2, 4));
-}
